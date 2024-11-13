@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Senhas - S4 Ferramentas Online</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="main-content">
+    <header>
+      <h1>Gerador de Senhas S4</h1>
+      <p>Crie senhas fortes e seguras com um clique!</p>
+    </header>
+  
+    <div>
+      <input type="text" id="password" placeholder="Sua senha vai aparecer aqui..." readonly />
+    </div>
+  
+    <button id="generate-btn">Gerar Senha</button>
+  
+    <footer>
+      <p>S4 Ferramentas Online - Todos os direitos reservados &copy; 2024</p>
+    </footer>
+  </div>
+
+  <script>
+    // Função para gerar senha aleatória
+    function generatePassword() {
+      const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-+=<>?/";
+      let password = "";
+      for (let i = 0; i < 12; i++) {
+        password += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      document.getElementById("password").value = password;
+    }
+
+    // Aciona a geração da senha ao clicar no botão
+    document.getElementById("generate-btn").addEventListener("click", generatePassword);
+
+    // Animações de entrada
+    window.addEventListener('load', function() {
+      document.body.style.opacity = 1;
+    });
+  </script>
+</body>
+</html>
